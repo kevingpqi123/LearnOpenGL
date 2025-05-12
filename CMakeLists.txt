@@ -135,6 +135,10 @@ set(4.advanced_opengl
     10.1.instancing_quads
     10.2.asteroids
     10.3.asteroids_instanced
+    10.4.rect_round_stroke
+    10.5.rect_miter_stroke
+    10.6.rrect_stroke
+    10.7.rrect_stroke_skia
     11.1.anti_aliasing_msaa
     11.2.anti_aliasing_offscreen
 )
