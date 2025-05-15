@@ -62,6 +62,8 @@ int main()
     // vertex shader
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    printf("vertexShaderSource: %s\n", vertexShaderSource);
+    printf("fragmentShaderSource: %s\n", fragmentShaderSource);
     glCompileShader(vertexShader);
     // check for shader compile errors
     int success;

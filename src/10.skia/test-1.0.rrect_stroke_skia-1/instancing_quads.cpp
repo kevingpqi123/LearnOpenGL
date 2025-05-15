@@ -52,26 +52,6 @@ int main()
     // -------------------------
     Shader shader("10.7.instancing.vs", "10.7.instancing.fs");
 
-<<<<<<< Updated upstream
-    float vertexData[] = {
-        94.500000, 94.500000, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        110.000000, 94.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        690.000000, 94.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        705.500000, 94.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        94.500000, 110.000000, 15.500000, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        110.000000, 110.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        690.000000, 110.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        705.500000, 110.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        94.500000, 490.000000, 15.500000, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        110.000000, 490.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        690.000000, 490.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        705.500000, 490.000000, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-        94.500000, 505.500000, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        110.000000, 505.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        690.000000, 505.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-        705.500000, 505.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000
-    };
-=======
 //    float vertexData[] = {
 //        94.500000, 94.500000, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
 //        110.000000, 94.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
@@ -90,7 +70,6 @@ int main()
 //        690.000000, 505.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
 //        705.500000, 505.500000, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000
 //    };
->>>>>>> Stashed changes
 //    float vertexData[] = {
 //        94.500000, 94.500000, 0.0, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
 //        110.000000, 94.500000, 0.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
@@ -110,26 +89,6 @@ int main()
 //        705.500000, 505.500000, 0.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000
 //    };
 
-<<<<<<< Updated upstream
-//    float vertexData[] = {
-//        94.500000, 94.500000, 1.0, 0.0, 1.0, 1.0, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        110.000000, 94.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        690.000000, 94.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        705.500000, 94.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        94.500000, 110.000000, 1.0, 0.0, 1.0, 1.0, 15.500000, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        110.000000, 110.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        690.000000, 110.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        705.500000, 110.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        94.500000, 490.000000, 1.0, 0.0, 1.0, 1.0, 15.500000, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        110.000000, 490.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        690.000000, 490.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        705.500000, 490.000000, 1.0, 0.0, 1.0, 1.0, 0.000244, 0.000244, 0.066667, 0.066667, 0.200000, 0.200000,
-//        94.500000, 505.500000, 1.0, 0.0, 1.0, 1.0, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        110.000000, 505.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        690.000000, 505.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
-//        705.500000, 505.500000, 1.0, 0.0, 1.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000
-//    };
-=======
     float vertexData[] = {
         94.500000, 94.500000, 1.0, 0.0, 0.0, 1.0, 15.500000, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
         110.000000, 94.500000, 1.0, 0.0, 0.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
@@ -148,7 +107,6 @@ int main()
         690.000000, 505.500000, 1.0, 0.0, 0.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000,
         705.500000, 505.500000, 1.0, 0.0, 0.0, 1.0, 0.000244, 15.500000, 0.066667, 0.066667, 0.200000, 0.200000
     };
->>>>>>> Stashed changes
 
     static const uint16_t gOverstrokeRRectIndices[] = {
         // clang-format off
@@ -174,10 +132,7 @@ int main()
         // center
         // we place this at the end so that we can ignore these indices when not rendering as filled
         5, 6, 10, 5, 10, 9,
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
     };
 
     const uint16_t* indices = gOverstrokeRRectIndices + 24;
@@ -205,16 +160,6 @@ int main()
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 
     // configure vertex attributes
-<<<<<<< Updated upstream
-//    glEnableVertexAttribArray(0);
-//    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)0);
-//    glEnableVertexAttribArray(1);
-//    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(2 * sizeof(float)));
-//    glEnableVertexAttribArray(2);
-//    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(6 * sizeof(float)));
-//    glEnableVertexAttribArray(3);
-//    glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(8 * sizeof(float)));
-=======
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(1);
@@ -223,7 +168,6 @@ int main()
     glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(6 * sizeof(float)));
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 12 * sizeof(float), (void*)(8 * sizeof(float)));
->>>>>>> Stashed changes
 
 //    glEnableVertexAttribArray(0);
 //    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)0);
@@ -233,16 +177,6 @@ int main()
 //    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(3 * sizeof(float)));
 //    glEnableVertexAttribArray(3);
 //    glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 9 * sizeof(float), (void*)(5 * sizeof(float)));
-<<<<<<< Updated upstream
-//
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(2 * sizeof(float)));
-    glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(4 * sizeof(float)));
-=======
 
 
     glEnableVertexAttribArray(0);
@@ -251,7 +185,6 @@ int main()
 //    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(2 * sizeof(float)));
 //    glEnableVertexAttribArray(2);
 //    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(4 * sizeof(float)));
->>>>>>> Stashed changes
 
 
 
@@ -281,16 +214,10 @@ int main()
         shader.setVec4("sk_Color", 1.0f, 0.0f, 0.0f, 1.0f);
 
         glBindVertexArray(VAO);
-<<<<<<< Updated upstream
-        glDrawElements(GL_TRIANGLES, 48, GL_UNSIGNED_SHORT, nullptr);
-
-//        glBindVertexArray(0);
-=======
 //        glDrawElements(GL_TRIANGLES, 48, GL_UNSIGNED_SHORT, nullptr);
         glDrawRangeElements(GL_TRIANGLES, 0, 15, 48, GL_UNSIGNED_SHORT, (void*)0);
 
         glBindVertexArray(0);
->>>>>>> Stashed changes
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         // -------------------------------------------------------------------------------

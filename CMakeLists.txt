@@ -69,6 +69,8 @@ set(CHAPTERS
     5.advanced_lighting
     6.pbr
     7.in_practice
+    9.tgfx
+    10.skia
 )
 
 set(1.getting_started
@@ -137,7 +139,7 @@ set(4.advanced_opengl
     10.3.asteroids_instanced
     10.4.rect_round_stroke
     10.5.rect_miter_stroke
-    10.6.rrect_stroke
+    10.6.rrect_fill
     10.7.rrect_stroke_skia
     11.1.anti_aliasing_msaa
     11.2.anti_aliasing_offscreen
@@ -175,6 +177,17 @@ set(7.in_practice
     1.debugging
     2.text_rendering
     #3.2d_game
+)
+set(9.tgfx
+    1.0.rrect_fill
+    1.1.rrect_stroke
+    1.2.rrect_stroke_disable_AntiAlias
+)
+
+set(10.skia
+    1.0.rrect_stroke_enable_antialias
+    1.1.rrect_stroke_miter_disable_antialias
+    test-1.0.rrect_stroke_skia
 )
 
 set(GUEST_ARTICLES

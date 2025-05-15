@@ -1,13 +1,8 @@
 #version 400
 
 uniform vec4 sk_RTAdjust;
-<<<<<<< Updated upstream
-uniform vec4 sk_Color;
-in vec2 inPosition;
-=======
 in vec2 inPosition;
 in vec4 sk_Color;
->>>>>>> Stashed changes
 in vec2 inEllipseOffset;
 in vec4 inEllipseRadii;
 noperspective out vec2 vEllipseOffsets_S0;

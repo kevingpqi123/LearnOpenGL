@@ -65,6 +65,7 @@ int main()
             translation.x = (float)x / 10.0f + offset;
             translation.y = (float)y / 10.0f + offset;
             translations[index++] = translation;
+            printf("%f, %f, \n", translation.x, translation.y);
         }
     }
 
@@ -80,13 +81,21 @@ int main()
     // ------------------------------------------------------------------
     float quadVertices[] = {
         // positions     // colors
-        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
-         0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
-        -0.05f, -0.05f,  0.0f, 0.0f, 1.0f,
+        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f, -0.900000, -0.900000,
+        0.05f, -0.05f,  0.0f, 1.0f, 0.0f, -0.900000, -0.900000,
+        -0.05f, -0.05f,  0.0f, 0.0f, 1.0f, -0.900000, -0.900000,
 
-        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f,
-         0.05f, -0.05f,  0.0f, 1.0f, 0.0f,
-         0.05f,  0.05f,  0.0f, 1.0f, 1.0f
+        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f, -0.900000, -0.900000,
+        0.05f, -0.05f,  0.0f, 1.0f, 0.0f, -0.900000, -0.900000,
+        0.05f,  0.05f,  0.0f, 1.0f, 1.0f, -0.900000, -0.900000,
+
+        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f, -0.700000, -0.900000,
+        0.05f, -0.05f,  0.0f, 1.0f, 0.0f, -0.700000, -0.900000,
+        -0.05f, -0.05f,  0.0f, 0.0f, 1.0f, -0.700000, -0.900000,
+
+        -0.05f,  0.05f,  1.0f, 0.0f, 0.0f, -0.700000, -0.900000,
+        0.05f, -0.05f,  0.0f, 1.0f, 0.0f, -0.700000, -0.900000,
+        0.05f,  0.05f,  0.0f, 1.0f, 1.0f, -0.700000, -0.900000,
     };
     unsigned int quadVAO, quadVBO;
     glGenVertexArrays(1, &quadVAO);
@@ -95,9 +104,15 @@ int main()
     glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), quadVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(1);
+<<<<<<< Updated upstream
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(2 * sizeof(float)));
+=======
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(2 * sizeof(float)));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 7 * sizeof(float), (void*)(5 * sizeof(float)));
+>>>>>>> Stashed changes
     // also set instance data
 //    glEnableVertexAttribArray(2);
 //    glBindBuffer(GL_ARRAY_BUFFER, instanceVBO); // this attribute comes from a different vertex buffer
@@ -118,8 +133,13 @@ int main()
         // draw 100 instanced quads
         shader.use();
         glBindVertexArray(quadVAO);
+<<<<<<< Updated upstream
         glDrawArrays(GL_TRIANGLES, 0, 6); // 100 triangles of 6 vertices each
 //        glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 1); // 100 triangles of 6 vertices each
+=======
+        glDrawArrays(GL_TRIANGLES, 0, 12);
+//        glDrawArraysInstanced(GL_TRIANGLES, 0, 6, 100); // 100 triangles of 6 vertices each
+>>>>>>> Stashed changes
         glBindVertexArray(0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
