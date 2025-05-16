@@ -187,6 +187,8 @@ set(9.tgfx
 set(10.skia
     1.0.rrect_stroke_enable_antialias
     1.1.rrect_stroke_miter_disable_antialias
+    1.2.rrect_stroke_enable_antialias
+    1.3.rrect_fill_enable_antialias
     test-1.0.rrect_stroke_skia
 )
 

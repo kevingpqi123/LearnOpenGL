@@ -7,9 +7,9 @@ uniform vec4 sk_RTAdjust;
 uniform vec3 utessControlArgs_S0;
 uniform vec4 uaffineMatrix_S0;
 uniform vec2 utranslate_S0;
-in vec4 pts01Attr;
-in vec4 pts23Attr;
-in vec2 argsAttr;
+layout (location = 0) in vec4 pts01Attr;
+layout (location = 1) in vec4 pts23Attr;
+layout (location = 2) in vec2 argsAttr;
 vec2 robust_normalize_diff_f2f2f2(vec2 a, vec2 b) {
     vec2 diff = a - b;
     if (diff == vec2(0.0)) {

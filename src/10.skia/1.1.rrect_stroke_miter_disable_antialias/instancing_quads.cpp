@@ -5,12 +5,15 @@
 #include <learnopengl/shader.h>
 
 #include <iostream>
+#include <limits>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
 // settings
 const unsigned int SCR_WIDTH = 2560;
 const unsigned int SCR_HEIGHT = 1880;
+
+float infinite = 1000;
 
 int main()
 {
@@ -52,76 +55,46 @@ int main()
   // -------------------------
   Shader shader("10.1.1.instancing.vs", "10.1.1.instancing.fs");
   float vertexData[] = {
-      94.500000, 94.500000, 0.0f, 0.0f, 1.0f, 1.0f, -1.000000, -1.000000, 15.500000, 0.290323,
-      110.000000, 94.500000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, -1.000000, 15.500000, 0.290323,
-      690.000000, 94.500000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, -1.000000, 15.500000, 0.290323,
-      705.500000, 94.500000, 0.0f, 0.0f, 1.0f, 1.0f, 1.000000, -1.000000, 15.500000, 0.290323,
-      94.500000, 110.000000, 0.0f, 0.0f, 1.0f, 1.0f, -1.000000, 0.000000, 15.500000, 0.290323,
-      110.000000, 110.000000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 0.000000, 15.500000, 0.290323,
-      690.000000, 110.000000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 0.000000, 15.500000, 0.290323,
-      705.500000, 110.000000, 0.0f, 0.0f, 1.0f, 1.0f, 1.000000, 0.000000, 15.500000, 0.290323,
-      94.500000, 490.000000, 0.0f, 0.0f, 1.0f, 1.0f, -1.000000, 0.000000, 15.500000, 0.290323,
-      110.000000, 490.000000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 0.000000, 15.500000, 0.290323,
-      690.000000, 490.000000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 0.000000, 15.500000, 0.290323,
-      705.500000, 490.000000, 0.0f, 0.0f, 1.0f, 1.0f, 1.000000, 0.000000, 15.500000, 0.290323,
-      94.500000, 505.500000, 0.0f, 0.0f, 1.0f, 1.0f, -1.000000, 1.000000, 15.500000, 0.290323,
-      110.000000, 505.500000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 1.000000, 15.500000, 0.290323,
-      690.000000, 505.500000, 0.0f, 0.0f, 1.0f, 1.0f, 0.000000, 1.000000, 15.500000, 0.290323,
-      705.500000, 505.500000, 0.0f, 0.0f, 1.0f, 1.0f, 1.000000, 1.000000, 15.500000, 0.290323
+      100.000000, 110.000000, 100.000000, 100.000000, 110.000000, 100.000000, 0.707107, infinite, 0, 0,
+      110.000000, 100.000000, 110.000000, 100.000000, 690.000000, 100.000000, 690.000000, 100.000000, 100, 100,
+      690.000000, 100.000000, 700.000000, 100.000000, 700.000000, 110.000000, 0.707107, infinite, 110, 100,
+      700.000000, 110.000000, 700.000000, 110.000000, 700.000000, 490.000000, 700.000000, 490.000000, 700, 100,
+      700.000000, 490.000000, 700.000000, 500.000000, 690.000000, 500.000000, 0.707107, infinite, 700, 110,
+      690.000000, 500.000000, 690.000000, 500.000000, 110.000000, 500.000000, 110.000000, 500.000000, 700, 500,
+      110.000000, 500.000000, 100.000000, 500.000000, 100.000000, 490.000000, 0.707107, infinite, 690, 500,
+      100.000000, 490.000000, 100.000000, 490.000000, 100.000000, 110.000000, 100.000000, 110.000000, 100, 500
   };
 
-  static const uint16_t gOverstrokeRRectIndices[] = {
-      // clang-format off
-        // overstroke quads
-        // we place this at the beginning so that we can skip these indices when rendering normally
-//        16, 17, 19, 16, 19, 18,
-//        19, 17, 23, 19, 23, 21,
-//        21, 23, 22, 21, 22, 20,
-//        22, 16, 18, 22, 18, 20,
 
-        // corners
-        0, 1, 5, 0, 5, 4,
-        2, 3, 7, 2, 7, 6,
-        8, 9, 13, 8, 13, 12,
-        10, 11, 15, 10, 15, 14,
-
-        // edges
-        1, 2, 6, 1, 6, 5,
-        4, 5, 9, 4, 9, 8,
-        6, 7, 11, 6, 11, 10,
-        9, 10, 14, 9, 14, 13,
-
-        // center
-        // we place this at the end so that we can ignore these indices when not rendering as filled
-        5, 6, 10, 5, 10, 9,
-      // clang-format on
-  };
-
-  const uint16_t* indices = gOverstrokeRRectIndices + 24;
 
     // create VAO and VBO
     unsigned int VAO, VBO;
     glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
+//    glGenBuffers(1, &VBO);
 
     glBindVertexArray(VAO);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    unsigned int instanceVBO;
+    glGenBuffers(1, &instanceVBO);
+    glBindBuffer(GL_ARRAY_BUFFER, instanceVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+//
+//    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+//    glBufferData(GL_ARRAY_BUFFER, sizeof(vertexData), vertexData, GL_STATIC_DRAW);
 
     // configure vertex attributes
     glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)0);
+    glVertexAttribDivisor(0, 1);
     glEnableVertexAttribArray(1);
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(2 * sizeof(float)));
+    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(4 * sizeof(float)));
+    glVertexAttribDivisor(1, 1);
     glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(6 * sizeof(float)));
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 10 * sizeof(float), (void*)(8 * sizeof(float)));
+    glVertexAttribDivisor(2, 1);
 
-    // 创建并绑定 EBO
-    unsigned int EBO;
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(gOverstrokeRRectIndices), gOverstrokeRRectIndices, GL_STATIC_DRAW);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);
@@ -141,10 +114,14 @@ int main()
         shader.use();
         shader.setVec4("sk_RTAdjust", 0.000781250012, -1, -0.00105596625, 1);
         shader.setVec3("utessControlArgs_S0", 1.5745033, 4, 5);
+        shader.setVec4("uaffineMatrix_S0", 1.0, 0, 0, 1);
+        shader.setVec2("utranslate_S0", 0, 0);
 
-        glBindVertexArray(VAO);
+        glBindVertexArray(instanceVBO);
 //        glDrawElements(GL_TRIANGLES, 48, GL_UNSIGNED_SHORT, nullptr);
-        glDrawRangeElements(GL_TRIANGLES, 0, 15, 48, GL_UNSIGNED_SHORT, (void*)0);
+//        glDrawRangeElements(GL_TRIANGLES, 0, 15, 48, GL_UNSIGNED_SHORT, (void*)0);
+        glDrawArraysInstanced(GL_TRIANGLE_STRIP, 0, 28, 8);
+//        glDrawArrays(GL_TRIANGLE_STRIP, 0, 28 * 8);
 
         glBindVertexArray(0);
 
@@ -154,9 +131,8 @@ int main()
         glfwPollEvents();
     }
 
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &EBO);
+//    glDeleteVertexArrays(1, &VAO);
+//    glDeleteBuffers(1, &VBO);
 
     glfwTerminate();
     return 0;
